@@ -1,0 +1,27 @@
+    {
+    "elmType": "div",
+    "attributes": {
+        "class": "spform-footer"
+    },
+    "style": {
+        "margin-top": "24px",
+        "padding": "12px 0",
+        "border-top": "1px solid #eaeaea",
+        "text-align": "center"
+    },
+    "children": [
+        {
+            "elmType": "a",
+            "attributes": {
+                "href": "https://alaskaair.sharepoint.com/sites/CorporateRealEstate/SitePages/Meetings%20and%20Events.aspx",
+                "target": "_blank"
+            },
+            "style": {
+                "font-size": "16px",
+                "color": "#0078D4",
+                "text-decoration": "underline"
+            },
+            "txtContent": "Meeting & Events | CRE"
+        }
+    ]
+}

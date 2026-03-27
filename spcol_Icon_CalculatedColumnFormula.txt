@@ -1,0 +1,29 @@
+=IF(
+  AND([AV]<>"",[Catering]<>"",[Facilities]<>""),
+  "ALL",
+  IF(
+    AND([AV]<>"",[Catering]<>""),
+    "AV_CAT",
+    IF(
+      AND([AV]<>"",[Facilities]<>""),
+      "AV_FAC",
+      IF(
+        AND([Catering]<>"",[Facilities]<>""),
+        "CAT_FAC",
+        IF(
+          [AV]<>"",
+          "AV",
+          IF(
+            [Catering]<>"",
+            "CAT",
+            IF(
+              [Facilities]<>"",
+              "FAC",
+              "NONE"
+            )
+          )
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,38 @@
+{
+    "sections": [
+        {
+            "displayname": "",
+            "fields": [
+                "Event",
+                "Start Time",
+                "End Time",
+                "AllDay"
+            ]
+        },
+        {
+            "displayname": "🔬 Details",
+            "fields": [
+                "Room",
+                "VIP",
+                "Status"
+            ]
+        },
+        {
+            "displayname": "📽️ Vendor",
+            "fields": [
+                "CBRE/Reliant",
+                "AV",
+                "Food"
+            ]
+        },
+        {
+            "displayname": "📝 Notes",
+            "fields": [
+                "Notes",
+                "Contact",
+                "IntakeForm"
+
+            ]
+        }
+    ]
+}

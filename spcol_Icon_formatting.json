@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "flex",
+    "flex-wrap": "wrap",
+    "align-items": "center",
+    "gap": "8px",
+    "padding": "4px"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Headset",
+        "title": "AV Required"
+      },
+      "style": {
+        "display": "=if(indexOf([$Icon2], 'AV') >= 0 || [$Icon2] == 'ALL', 'inline-block', 'none')",
+        "font-size": "20px",
+        "color": "#0078D4"
+      }
+    },
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "EatDrink",
+        "title": "Catering Required"
+      },
+      "style": {
+        "display": "=if(indexOf([$Icon2], 'CAT') >= 0 || [$Icon2] == 'ALL', 'inline-block', 'none')",
+        "font-size": "20px",
+        "color": "#107C10"
+      }
+    },
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "People",
+        "title": "Facilities Required"
+      },
+      "style": {
+        "display": "=if(indexOf([$Icon2], 'FAC') >= 0 || [$Icon2] == 'ALL', 'inline-block', 'none')",
+        "font-size": "20px",
+        "color": "#8E562E"
+      }
+    }
+  ]
+}
