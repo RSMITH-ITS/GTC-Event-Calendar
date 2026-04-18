@@ -1,0 +1,185 @@
+
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.6",
+  "body": [
+    {
+      "type": "Container",
+      "padding": "Default",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Global Training Center",
+          "size": "Small",
+          "color": "Good"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Auditorium Event Registration",
+          "size": "ExtraLarge",
+          "wrap": true,
+          "color": "Light",
+          "weight": "Bolder",
+          "spacing": "None",
+          "style": "heading"
+        }
+      ],
+      "id": "header",
+      "backgroundImage": {
+        "url": "https://alaskaair.sharepoint.com/sites/CorporateRealEstate/SiteAssets/AuditoriumImage.png"
+      },
+      "height": "stretch",
+      "minHeight": "200px"
+    },
+    {
+      "type": "Container",
+      "padding": "Default",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "
+ | 
+",
+          "size": "Large",
+          "weight": "Bolder",
+          "color": "Dark",
+          "style": "heading"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Contacts",
+          "color": "Default",
+          "isSubtle": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "
+",
+          "wrap": true,
+          "spacing": "None"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "container-detail",
+      "items": [
+        {
+          "type": "TextBlock",
+          "id": "cf756d61-8c58-6e89-ab89-a614e784a9b4",
+          "text": "Event Details",
+          "wrap": true,
+          "size": "Large",
+          "horizontalAlignment": "Center",
+          "weight": "Bolder",
+          "color": "Accent"
+        },
+        {
+          "type": "FactSet",
+          "id": "e8eec5c7-a1c7-1215-349c-a84f44f0557d",
+          "facts": [
+            {
+              "title": "Start Date",
+              "value": "
+"
+            },
+            {
+              "title": "End Date",
+              "value": "
+"
+            },
+            {
+              "title": "Setup Time",
+              "value": ""
+            },
+            {
+              "title": "Attendees",
+              "value": "
+"
+            }
+          ],
+          "separator": true
+        },
+        {
+          "type": "TextBlock",
+          "id": "b496d31c-01ee-bd0f-fd63-7ff5bc7b5049",
+          "text": "VIP",
+          "wrap": true,
+          "weight": "Bolder",
+          "spacing": "Medium"
+        },
+        {
+          "type": "TextBlock",
+          "text": "
+",
+          "wrap": true,
+          "spacing": "Small"
+        },
+        {
+          "type": "TextBlock",
+          "id": "cd4b2a62-d19e-c34f-26af-29d9d3a84631",
+          "text": "Services",
+          "wrap": true,
+          "weight": "Bolder",
+          "size": "Large",
+          "horizontalAlignment": "Center",
+          "color": "Accent"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "AV",
+              "value": "
+"
+            },
+            {
+              "title": "AV Discovery",
+              "value": "
+"
+            },
+            {
+              "title": "Catering",
+              "value": "
+"
+            },
+            {
+              "title": "Layout",
+              "value": "
+"
+            },
+            {
+              "title": "Facilities",
+              "value": "
+"
+            }
+          ],
+          "separator": true
+        }
+      ],
+      "separator": true,
+      "padding": "Default",
+      "style": "emphasis",
+      "isVisible": false
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.ToggleVisibility",
+      "title": "More details...",
+      "targetElements": [
+        "container-detail"
+      ]
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Event Planning | SharePoint",
+      "url": "https://amdesigner.azurewebsites.net
+"
+    }
+  ],
+  "padding": "None"
+}
+
