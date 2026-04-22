@@ -1,0 +1,60 @@
+
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "additionalRowClass": {
+    "operator": ":",
+    "operands": [
+      {
+        "operator": "==",
+        "operands": [
+          "[$Status]",
+          "Cancelled"
+        ]
+      },
+      "sp-field-strikeThrough sp-css-color-DarkRedText",
+      {
+        "operator": ":",
+        "operands": [
+          {
+            "operator": "<",
+            "operands": [
+              {
+                "operator": "Date()",
+                "operands": [
+                  {
+                    "operator": "toDateString()",
+                    "operands": [
+                      {
+                        "operator": "Date()",
+                        "operands": [
+                          "[$_EndDate]"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "operator": "Date()",
+                "operands": [
+                  {
+                    "operator": "toDateString()",
+                    "operands": [
+                      {
+                        "operator": "Date()",
+                        "operands": [
+                          "@now"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "sp-field-strikeThrough sp-css-color-LavenderText",
+          "sp-css-backgroundColor-BgLightGray sp-css-color-LightGrayFont"
+        ]
+      }
+    ]
+  }
+}
