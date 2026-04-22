@@ -1,0 +1,181 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "style": "emphasis",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Global Training Center",
+          "size": "Small",
+          "color": "Light"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Auditorium Event Registration",
+          "size": "ExtraLarge",
+          "wrap": true,
+          "color": "Light",
+          "weight": "Bolder",
+          "spacing": "None"
+        }
+      ],
+      "id": "header",
+      "backgroundImage": {
+        "url": "https://raw.githubusercontent.com/RSMITH-ITS/GTC-Event-Calendar/main/AuditoriumImage.png",
+        "fillMode": "cover",
+        "horizontalAlignment": "Center",
+        "verticalAlignment": "Center"
+      },
+      "minHeight": "200px",
+      "padding": "Large",
+      "verticalContentAlignment": "Center"
+    },
+    {
+      "type": "Container",
+      "padding": "Default",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "@{formatDateTime(triggerBody()?['StartDate'], 'MMM dd')} | ",
+          "size": "Large",
+          "weight": "Bolder",
+          "color": "Dark",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "Contacts",
+          "isSubtle": true,
+          "spacing": "Medium"
+        },
+        {
+          "type": "TextBlock",
+          "text": "Brad Bomstead (Brad.Bomstead@alaskaair.com)",
+          "wrap": true,
+          "spacing": "None"
+        }
+      ]
+    },
+    {
+      "type": "Container",
+      "id": "container-detail",
+      "isVisible": false,
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Event Details",
+          "size": "Large",
+          "horizontalAlignment": "Center",
+          "weight": "Bolder",
+          "color": "Accent"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "Start Date",
+              "value": "@{if(empty(triggerBody()?['StartDate']), 'N/A', formatDateTime(triggerBody()?['StartDate'], 'yyyy-MM-dd hh:mm tt'))}"
+            },
+            {
+              "title": "End Date",
+              "value": "@{if(empty(triggerBody()?['OData__EndDate']), 'N/A', formatDateTime(triggerBody()?['OData__EndDate'], 'yyyy-MM-dd hh:mm tt'))}"
+            },
+            {
+              "title": "Setup Time",
+              "value": "@{if(empty(triggerBody()?['SetupTime']), 'N/A', formatDateTime(triggerBody()?['SetupTime'], 'yyyy-MM-dd hh:mm tt'))}"
+            },
+            {
+              "title": "Attendees",
+              "value": "@{string(triggerBody()?['Attendees'])}"
+            },
+            {
+              "title": "VIP",
+              "value": "@{coalesce(outputs('Compose_VIPCard$'),'None')}"
+            }
+          ],
+          "separator": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "Services",
+          "weight": "Bolder",
+          "size": "Large",
+          "horizontalAlignment": "Center",
+          "color": "Accent",
+          "spacing": "Large"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "AV",
+              "value": "@{coalesce(triggerBody()?['AV/Value'], 'None')}"
+            },
+            {
+              "title": "AV Discovery",
+              "value": "@{coalesce(triggerBody()?['AVDiscovery/Value'], 'None')}"
+            },
+            {
+              "title": "Catering",
+              "value": "@{coalesce(triggerBody()?['Catering/Value'], 'None')}"
+            },
+            {
+              "title": "Layout",
+              "value": "@{coalesce(triggerBody()?['Layout/Value'], 'None')}"
+            },
+            {
+              "title": "Facilities",
+              "value": "@{coalesce(triggerBody()?['Facilities/Value'], 'None')}"
+            }
+          ],
+          "separator": true
+        },
+        {
+          "type": "TextBlock",
+          "text": "Additional Notes",
+          "wrap": true,
+          "weight": "Bolder",
+          "color": "Accent",
+          "horizontalAlignment": "Center",
+          "spacing": "Large",
+          "size": "Large"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "Furniture",
+              "value": "@{coalesce(triggerBody()?['Furniture'], 'None')}"
+            },
+            {
+              "title": "Notes",
+              "value": "@{coalesce(triggerBody()?['Notes'], 'None')}"
+            }
+          ]
+        }
+      ],
+      "separator": true,
+      "style": "emphasis",
+      "padding": "None"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.ToggleVisibility",
+      "title": "More details...",
+      "targetElements": [
+        "container-detail"
+      ]
+    },
+    {
+      "type": "Action.OpenUrl",
+      "title": "Event Planning | SharePoint",
+      "url": "@{concat(parameters('GTC Cal SharePoint Item Link (crcaa_GTCCalSharePOintDefaultView)'),triggerBody()?['ID'])}"
+    }
+  ],
+  "padding": "None"
+}
