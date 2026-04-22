@@ -1,0 +1,62 @@
+{
+    "sections": [
+        {
+            "displayname": "",
+            "fields": [
+                "Event",
+                "Status",
+                "Contact",
+                "Start Date",
+                "End Date",
+                "SetupTime",
+                "Recurring",
+                "RecurringDetail",
+                "ztemp-Contacts"
+            ]
+        },
+        {
+            "displayname": "🔬 DETAILS",
+            "fields": [
+                "Room",
+                "Attendees",
+                "VIP",
+                "ztmpDateNotes",
+                "ztempRoomName"
+            ]
+        },
+        {
+            "displayname": "📽️ VENDOR",
+            "fields": [
+                "Layout",
+                "Facilities",
+                "Catering",
+                "AV",
+                "AVDiscovery"
+            ]
+        },
+        {
+            "displayname": "📝 NOTES",
+            "fields": [
+                "Notes",
+                "Add. Furniture",
+                "Intake Form Received"
+            ]
+        },
+        {
+            "displayname": "🔗 OTHER",
+            "fields": [
+                "TeamsChatLink",
+                "CalendarLink",
+                "Confirmed",
+                "CalendarID",
+                "Sign-off status",
+                "Services",
+                "Demo",
+                "NotificationSent",
+                "by Quarter",
+                "by Week Starting",
+                "by Week"
+            ]
+        }
+    ]
+}
