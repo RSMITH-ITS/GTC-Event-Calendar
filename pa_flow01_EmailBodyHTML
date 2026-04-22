@@ -1,0 +1,88 @@
+<div class="event-card">
+    <div class="card-header">
+        <div class="header-content">
+            <div class="glass-overlay">
+                <div class="sub-brand">Global Training Center</div>
+                <div class="main-title">Auditorium Event Registration</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="event-summary">
+            @{formatDateTime(triggerBody()?['StartDate'], 'MMM dd')} | @{triggerBody()?['Title']}
+        </div>
+        <div class="label">Contacts</div>
+        <div class="contact-list">@{variables('varContactsListHTML')}</div>
+    </div>
+
+    <div class="details-section">
+        <h2 class="section-heading">Event Details</h2>
+        <table class="details-table">
+            <tr>
+                <td class="col-label">Start Date</td>
+                <td class="col-value">@{if( empty(triggerBody()?['StartDate']), 'N/A', formatDateTime(convertTimeZone(triggerBody()?['StartDate'], 'Pacific Standard Time', 'Pacific Standard Time'), 'yyyy-MM-dd hh:mm tt') )}</td>
+            </tr>
+            <tr>
+                <td class="col-label">End Date</td>
+                <td class="col-value">@{
+if( empty(triggerBody()?['OData__EndDate']), 'N/A', formatDateTime(convertTimeZone(triggerBody()?['OData__EndDate'], 'Pacific Standard Time', 'Pacific Standard Time'), 'yyyy-MM-dd hh:mm tt') )}</td>
+            </tr>
+            <tr>
+                <td class="col-label">Setup Time</td>
+                <td class="col-value">@{if( empty(triggerBody()?['SetupTime']), 'N/A', formatDateTime(convertTimeZone(triggerBody()?['SetupTime'], 'Pacific Standard Time', 'Pacific Standard Time'), 'yyyy-MM-dd hh:mm tt') )}</td>
+            </tr>
+            <tr>
+                <td class="col-label">Attendees</td>
+                <td class="col-value">@{string(triggerBody()?['Attendees'])}</td>
+            </tr>
+            <tr>
+                <td class="col-label">VIP</td>
+                <td class="col-value">@{variables('varVIPListHTML')}</td>
+            </tr>
+        </table>
+
+        <h2 class="section-heading">Services</h2>
+        <table class="details-table">
+            <tr>
+                <td class="col-label">AV</td>
+                <td class="col-value">@{coalesce(triggerBody()?['AV/Value'], 'None')}</td>
+            </tr>
+            <tr>
+                <td class="col-label">AV Discovery</td>
+                <td class="col-value">@{coalesce(triggerBody()?['AVDiscovery/Value'], 'None')}</td>
+            </tr>
+            <tr>
+                <td class="col-label">Catering</td>
+                <td class="col-value">@{coalesce(triggerBody()?['Catering/Value'], 'None')}</td>
+            </tr>
+            <tr>
+                <td class="col-label">Layout</td>
+                <td class="col-value">@{coalesce(triggerBody()?['Layout/Value'], 'None')}</td>
+            </tr>
+            <tr>
+                <td class="col-label">Facilities</td>
+                <td class="col-value">@{coalesce(triggerBody()?['Facilities/Value'], 'None')}</td>
+            </tr>
+        </table>
+
+        <h2 class="section-heading">Additional Notes</h2>
+        <table class="details-table">
+            <tr>
+                <td class="col-label">Furniture</td>
+                <td class="col-value">@{coalesce(triggerBody()?['Furniture'], 'None')}</td>
+            </tr>
+            <tr>
+                <td class="col-label">Notes</td>
+                <td class="col-value">@{coalesce(triggerBody()?['Notes'], 'None')}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card-footer">
+        <a href="@{concat(parameters('GTC Cal SharePoint Item Link (crcaa_GTCCalSharePOintDefaultView)'),triggerBody()?['ID'])}" 
+           class="btn-sharepoint">
+            Event Planning | SharePoint
+        </a>
+    </div>
+</div>
