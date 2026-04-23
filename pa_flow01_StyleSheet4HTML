@@ -14,7 +14,7 @@
 /* Header & Banner */
 .card-header {
     background-color: #00426a;
-    background-image: url('https://raw.githubusercontent.com/RSMITH-ITS/GTC-Event-Calendar/main/AuditoriumImage.png');
+    background-image: url('https://raw.githubusercontent.com/RSMITH-ITS/GTC-Event-Calendar/main/GTC-Auditorium03.jpg');
     background-size: cover;
     background-position: center;
     min-height: 160px;
