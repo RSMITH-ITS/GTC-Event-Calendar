@@ -14,7 +14,7 @@
                 <tr>
                     <td bgcolor="#011E41" style="padding: 25px 40px; color: #ffffff;">
                         <div style="margin: 0; font-size: 14px; font-weight: bold; color: #91B119; text-transform: uppercase; letter-spacing: 1px; line-height: 1;">Global Training Center</div>
-                        <h1 style="margin: 4px 0 0 0; font-size: 24px; font-weight: bold; line-height: 1.1; color: #ffffff;">@{variables('varRoomName')} Event | @{variables('varActionType')}</h1>
+                        <h1 style="margin: 4px 0 0 0; font-size: 24px; font-weight: bold; line-height: 1.1; color: #ffffff;">@{variables('varRoomName')} | Event @{variables('varActionType')}</h1>
                     </td>
                 </tr>
 
@@ -24,7 +24,7 @@
                         
                         <!-- NEW: Event Summary Section -->
                         <div style="font-size: 20px; font-weight: bold; color: #00426a; margin-bottom: 5px;">
-                            @{formatDateTime(variables('varStartDate'), 'MMM dd')} | @{triggerBody()?['Title']}
+                            @{formatDateTime(variables('varStartDate'), 'MMM dd')} | @{variables('varEventTitle')}
                         </div>
                         <div style="margin-bottom: 25px;">
                             <span style="font-weight: bold; color: #011E41; font-size: 14px; text-transform: uppercase;">Contact: </span>
@@ -41,7 +41,7 @@
                                         <tr>
                                             <td align="center" bgcolor="#0076a3" style="border-radius: 4px; padding: 12px 15px;">
                                                 <a href="@{variables('varItemSPLink')}" target="_blank" style="font-size: 15px; font-weight: bold; color: #ffffff; text-decoration: none; display: block;">
-                                                    <img src="https://alaskaair.sharepoint.com/sites/CorporateRealEstate/SiteAssets/GTCEventsApp/sharepoint_32x1.svg" width="20" height="20" style="margin-right: 10px; display: inline-block; vertical-align: middle;" />
+                                                    <img src="https://alaskaair.sharepoint.com/sites/CorporateRealEstate/SiteAssets/GTCEventsApp/sharepoint-48x48.png" width="20" height="20" style="margin-right: 10px; display: inline-block; vertical-align: middle;" />
                                                     <span style="vertical-align: middle;">Event Details</span>
                                                 </a>
                                             </td>
@@ -54,7 +54,7 @@
                                         <tr>
                                             <td align="center" bgcolor="#0076a3" style="border-radius: 4px; padding: 12px 15px;">
                                                 <a href="@{variables('varCalendarLink')}" target="_blank" style="font-size: 15px; font-weight: bold; color: #ffffff; text-decoration: none; display: block;">
-                                                    <img src="https://alaskaair.sharepoint.com/sites/CorporateRealEstate/SiteAssets/GTCEventsApp/outlook_32x1.svg" width="20" height="20" style="margin-right: 10px; display: inline-block; vertical-align: middle;" />
+                                                    <img src="https://alaskaair.sharepoint.com/sites/CorporateRealEstate/SiteAssets/GTCEventsApp/outlookcalendar-48x48.png" width="20" height="20" style="margin-right: 10px; display: inline-block; vertical-align: middle;" />
                                                     <span style="vertical-align: middle;">@{variables('varRoomName')} Calendar</span>
                                                 </a>
                                             </td>
