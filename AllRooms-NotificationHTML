@@ -4,7 +4,7 @@
         <div class="header-content">
             <div class="glass-overlay">
                 <div class="sub-brand">Global Training Center</div>
-                <div class="main-title"> @{concat(outputs('Compose_|_Room_Name'), 'Event ', variables('varActionType'))}</div>
+                <div class="main-title"> @{concat(variables('varRoomName'), ' Event ',variables('varActionType'))}</div>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
 
     <!-- Buttons Section -->
     <div class="content-footer">
-        <a href="@{variables('varEventSPLink')}" class="link-button">
+        <a href="@{variables('varItemSPLink')}" class="link-button">
             <table class="link-table">
                 <tr>
                     <td class="icon-cell">
@@ -34,7 +34,7 @@
             </table>
         </a>
 
-        <a href="https://outlook.office.com/calendar" class="link-button">
+        <a href="@{triggerOutputs()?['body/webLink']}" class="link-button">
             <table class="link-table">
                 <tr>
                     <td class="icon-cell">
