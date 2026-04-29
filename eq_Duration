@@ -1,0 +1,9 @@
+float(
+  div(
+    sub(
+      ticks(triggerOutputs()?['body/end']),
+      ticks(triggerOutputs()?['body/start'])
+    ),
+    36000000000
+  )
+)
