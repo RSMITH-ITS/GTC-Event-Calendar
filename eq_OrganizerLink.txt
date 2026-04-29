@@ -1,0 +1,6 @@
+
+concat(
+  '<a href="mailto:', triggerOutputs()?['body/organizer'], '">',
+  first(split(triggerOutputs()?['body/organizer'], '@')),
+  '</a>'
+)
