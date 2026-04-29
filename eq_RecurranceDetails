@@ -1,0 +1,1 @@
+if(equals(triggerOutputs()?['body/recurrence'], 'none'), 'None', concat(triggerOutputs()?['body/numberOfOccurences'], ' times ', triggerOutputs()?['body/recurrence'], ', ending ', formatDateTime(triggerOutputs()?['body/recurrenceEnd'], 'MMM-dd-yyyy')))
