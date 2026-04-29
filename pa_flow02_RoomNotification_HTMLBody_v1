@@ -1,0 +1,49 @@
+<div class="event-card">
+    <!-- Header Section -->
+    <div class="card-header">
+        <div class="header-content">
+            <div class="glass-overlay">
+                <div class="sub-brand">Global Training Center</div>
+                <div class="main-title"> @{concat(variables('varRoomName'), ' Event ',variables('varActionType'))}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="card-body">
+        <div class="event-summary">
+            @{formatDateTime(triggerOutputs()?['body/start'], 'MMM dd')} | @{triggerOutputs()?['body/subject']}
+        </div>
+        
+        <div class="label">Contacts</div>
+        <div class="contact-list">
+            @{triggerOutputs()?['body/organizer']}
+        </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="content-footer">
+       
+ <a href="@{variables('varItemSPLink')}" class="link-button">
+            <table class="link-table">
+                <tr>
+                    <td class="icon-cell">
+                        <img src="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/product/svg/sharepoint_32x1.svg" class="icon-img" alt="SP">
+                    </td>
+                    <td class="text-cell">Event Planning Link | SharePoint</td>
+                </tr>
+            </table>
+        </a>
+
+        <a href="@{variables('varCalendarLink')}" class="link-button">
+            <table class="link-table">
+                <tr>
+                    <td class="icon-cell">
+                        <img src="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/product/svg/outlook_32x1.svg" class="icon-img" alt="Outlook">
+                    </td>
+                    <td class="text-cell">[Room] Calendar | Outlook</td>
+                </tr>
+            </table>
+        </a>
+    </div>
+</div>
